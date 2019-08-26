@@ -8,4 +8,6 @@ if __name__ == '__main__':
     driver = webdriver.Chrome(executable_path="C:\\Users\\zgordin\\Documents\\chromedriver.exe")
     driver.implicitly_wait(20)  # give up to 20 sec to find on all find_elemets or find_elements
     driver.get(WEB_SITE)
-    print (driver.page_source.encode("utf-8"))
+    originalstr = str(driver.page_source.encode("utf-8"))
+    newres = originalstr.replace("World", "")
+    print(newres)
